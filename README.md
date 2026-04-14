@@ -17,7 +17,26 @@ These four projects together cover the full arc of the modern Transformer paradi
 **Project 3** shows the correct way to use ViT: fine tune a pretrained checkpoint. The jump from ~27% (scratch) to 98.7% (fine tuned) makes the pretraining hypothesis viscerally concrete.
 
 **Project 4** connects vision and language in a shared embedding space. CLIP uses a dual encoder architecture (ViT for images, causal Transformer for text) trained with a contrastive objective. Building it from scratch on Flickr8k demonstrates the architecture faithfully while making it clear why CLIP's results depend on massive scale (400M pairs, batch size 32,768). The poor results on 8K images are the lesson, not a failure.
-
 ---
 ## Setup
 ```bash
+git clone https://github.com/[yourusername]/deep-learning-paper-replications
+cd deep-learning-paper-replications
+pip install -r requirements.txt
+```
+Each subfolder has its own README with notebook specific instructions. All notebooks are self contained and runnable on a free Kaggle/Colab T4 GPU.
+---
+## Hardware
+All experiments run on a single **NVIDIA Tesla T4** (free tier on Kaggle/Colab).
+| Project | Training time |
+|---------|--------------|
+| Transformer (30 epochs, Multi30k) | ~9 minutes |
+| ViT from scratch (5 epochs, CIFAR 10) | ~50 minutes |
+| ViT fine tuning (10K steps, CIFAR 10) | ~7.2 hours |
+| Mini CLIP (30 epochs, Flickr8k) | ~2 hours |
+---
+## References
+1. Vaswani, A., et al. "Attention is all you need." NeurIPS 2017.
+2. Dosovitskiy, A., et al. "An image is worth 16x16 words: Transformers for image recognition at scale." ICLR 2021.
+3. Radford, A., et al. "Learning transferable visual models from natural language supervision." ICML 2021.
+4. HuggingFace: `google/vit-base-patch16-224-in21k`
