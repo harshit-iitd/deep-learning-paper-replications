@@ -26,6 +26,7 @@ cd deep-learning-paper-replications
 pip install -r requirements.txt
 ```
 Each subfolder has its own README with notebook specific instructions. All notebooks are self contained and runnable on a free Kaggle/Colab T4 GPU.
+
 ---
 ## Hardware
 All experiments run on a single **NVIDIA Tesla T4** (free tier on Kaggle/Colab).
