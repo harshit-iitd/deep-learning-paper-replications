@@ -17,6 +17,7 @@ These four projects together cover the full arc of the modern Transformer paradi
 **Project 3** shows the correct way to use ViT: fine tune a pretrained checkpoint. The jump from ~27% (scratch) to 98.7% (fine tuned) makes the pretraining hypothesis viscerally concrete.
 
 **Project 4** connects vision and language in a shared embedding space. CLIP uses a dual encoder architecture (ViT for images, causal Transformer for text) trained with a contrastive objective. Building it from scratch on Flickr8k demonstrates the architecture faithfully while making it clear why CLIP's results depend on massive scale (400M pairs, batch size 32,768). The poor results on 8K images are the lesson, not a failure.
+
 ---
 ## Setup
 ```bash
